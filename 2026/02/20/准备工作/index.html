@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>准备工作 | PhyCmdBlock的博客</title><meta name="author" content="PhyCmdBlock,w.zheny@qq.com"><meta name="copyright" content="PhyCmdBlock"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="注意  这篇文章的内容不适用所有人。   背景信息下个学期要上《高级语言程序设计》，这是一门工科基础课，不是计算机相关大类和专业的特有。根据获得的消息，这门课学分3分，但是却会带来与3学分不匹配的负担，所以需要做好完全准备。我目前拥有的计算机相关经验：  2019左右，学习C++，覆盖基础语法、多种数据结构和少量算法； 2022-2025选修浙江技术，学习Python，覆盖部分基础语法、少量数据结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="准备工作">
+<meta property="og:url" content="http://phycmdblock.github.io/2026/02/20/%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/index.html">
+<meta property="og:site_name" content="PhyCmdBlock的博客">
+<meta property="og:description" content="注意  这篇文章的内容不适用所有人。   背景信息下个学期要上《高级语言程序设计》，这是一门工科基础课，不是计算机相关大类和专业的特有。根据获得的消息，这门课学分3分，但是却会带来与3学分不匹配的负担，所以需要做好完全准备。我目前拥有的计算机相关经验：  2019左右，学习C++，覆盖基础语法、多种数据结构和少量算法； 2022-2025选修浙江技术，学习Python，覆盖部分基础语法、少量数据结">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://phycmdblock.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2026-02-20T15:43:37.000Z">
+<meta property="article:modified_time" content="2026-02-20T15:45:18.282Z">
+<meta property="article:author" content="PhyCmdBlock">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://phycmdblock.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "准备工作",
+  "url": "http://phycmdblock.github.io/2026/02/20/%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/",
+  "image": "http://phycmdblock.github.io/img/avatar.jpg",
+  "datePublished": "2026-02-20T15:43:37.000Z",
+  "dateModified": "2026-02-20T15:45:18.282Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "PhyCmdBlock",
+      "url": "https://github.com/PhyCmdBlock"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.jpeg"><link rel="canonical" href="http://phycmdblock.github.io/2026/02/20/%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 19
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '准备工作',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/admonition.css"><style>
+  @font-face {
+    font-family: "汉仪帅线体W";
+    src: url('/fonts/myfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+</style>
+<meta name="generator" content="Hexo 8.1.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" id="hexo-admonition-icon-injected">
+  </head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      if ($loadingBox.classList.contains('loaded')) return
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+
+  if (document.readyState === 'complete') {
+    preloader.endLoading()
+  } else {
+    window.addEventListener('load', preloader.endLoading)
+    document.addEventListener('DOMContentLoaded', preloader.endLoading)
+    // Add timeout protection: force end after 7 seconds
+    setTimeout(preloader.endLoading, 7000)
+  }
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E8%BD%AF%E4%BB%B6/"><i class="fa-fw fas fa-laptop-code"></i><span> 软件</span></a></li><li><a class="site-page child" href="/categories/%E7%B3%BB%E7%BB%9F/"><i class="fa-fw fas fa-desktop"></i><span> 系统</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-ellipsis-h"></i><span> 更多</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/about/index.html"><i class="fa-fw fas fa-circle-info"></i><span> 关于本站</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/top_image.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">PhyCmdBlock的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">准备工作</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E8%BD%AF%E4%BB%B6/"><i class="fa-fw fas fa-laptop-code"></i><span> 软件</span></a></li><li><a class="site-page child" href="/categories/%E7%B3%BB%E7%BB%9F/"><i class="fa-fw fas fa-desktop"></i><span> 系统</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-ellipsis-h"></i><span> 更多</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/about/index.html"><i class="fa-fw fas fa-circle-info"></i><span> 关于本站</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">准备工作</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-02-20T15:43:37.000Z" title="发表于 2026-02-20 23:43:37">2026-02-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-02-20T15:45:18.282Z" title="更新于 2026-02-20 23:45:18">2026-02-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">高级语言程序设计</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div class="admonition warning"><p class="admonition-title"><span class="mdi mdi-alert-outline admonition-icon"></span>注意</p><div class="admonition-content">
+
+<p>这篇文章的内容不适用所有人。</p>
+</div></div>
+
+<h1 id="背景信息"><a href="#背景信息" class="headerlink" title="背景信息"></a>背景信息</h1><p>下个学期要上《高级语言程序设计》，这是一门工科基础课，不是计算机相关大类和专业的特有。<br>根据获得的消息，这门课学分3分，但是却会带来与3学分不匹配的负担，所以需要做好完全准备。<br>我目前拥有的计算机相关经验：</p>
+<ul>
+<li>2019左右，学习C++，覆盖基础语法、多种数据结构和少量算法；</li>
+<li>2022-2025选修浙江技术，学习Python，覆盖部分基础语法、少量数据结构和少量算法；</li>
+<li>2025-2026，大一上，以娱乐为目的，自己捣鼓各类技术，还搞了点vibe coding，还尝试在自己电脑上微调模型（不过失败了）<br>根据获得的消息，sj的高程要求严苛、规范性要求高、操作复杂度高、占用时间长。目前的经验与这样的要求匹配度不高。</li>
+</ul>
+<hr>
+<h1 id="一个学校提供的网站"><a href="#一个学校提供的网站" class="headerlink" title="一个学校提供的网站"></a>一个学校提供的网站</h1><h2 id="网站概况"><a href="#网站概况" class="headerlink" title="网站概况"></a>网站概况</h2><p>混迹各类学校群聊，我获得了一个URL：<a target="_blank" rel="noopener" href="https://10.80.42.185/Website/">https://10.80.42.185/Website/</a></p>
+<div class="admonition warning"><p class="admonition-title"><span class="mdi mdi-alert-outline admonition-icon"></span>注意</p><div class="admonition-content">
+
+<p>10.80.42.185是一个内网IP，网络环境不同将无法访问。</p>
+</div></div>
+
+<p>我使用学校的网络环境访问了这个网站，发现这是一个对tj高程课程的介绍，有大量说明。网站最近的活跃状态是2025-09-28，大部分文章的更新时间是2025-09-15，说明至少上个学期还有更新，内容不会有太大偏差。<br>这个网站的导航路径比较混乱，有一些页面只能通过其他页面里的链接跳转。</p>
+<div class="admonition tip"><p class="admonition-title"><span class="mdi mdi-lightbulb-on-outline admonition-icon"></span>提示</p><div class="admonition-content">
+
+<p>我找到github那里去后，发现这个网站也在GitHub Pages有部署，非学校网络环境也可以访问：<a target="_blank" rel="noopener" href="https://tongji-high-level-language-programming.github.io/Website/">https://tongji-high-level-language-programming.github.io/Website/</a></p>
+</div></div>
+
+<h2 id="网站内容"><a href="#网站内容" class="headerlink" title="网站内容"></a>网站内容</h2><p>根据我的阅读，现在总结为以下内容：</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>我很久以前学习C++，都是用的devcpp，虽然知道Visual Studio是使用最多的，但是没有用过。</p>
+<ul>
+<li>课程要求同时使用2个不同的IDE，一个是Visual Studio，一个是Dev-C++，目的是让代码在两个编译器（MSVC与TDM-GCC）下都能够顺利编译，保证代码的规范性。</li>
+<li>Dev-C++采用特供版。</li>
+<li>文档说，Visual Studio会不断更新，可以自行安装。因此我选择了vs2026。</li>
+<li>安装Visual Studio后，需要安装file encoding这个拓展，能直接在右下角改编码方式，并且需要保证全部采用<code>SYS-简体中文(GB2312)</code>和<code>CRLF</code>的设置。</li>
+<li>上方的解决方案配置和平台必须选择<code>Debug</code>,<code>x86</code>,应该是保证按照32位的方式进行编译和运行，可能是基础数据类型那里占用位数不同，统一一下吧</li>
+<li>ctrl+f5键运行程序，就和devcpp里的编译运行是一个效果</li>
+<li>源程序最后不允许加 <code>system(&quot;pause&quot;);</code> 或 <code>getchar();</code> 之类的语句来暂停</li>
+<li>老师推荐在一个 <strong>解决方案(Solution)</strong> 中放作业文件，一个作业一个项目，这个东西相当于是多个项目的集合。在解决方案里切换项目，选择项目右键，选择“设为启动项目”</li>
+<li>在vs里面程序调好了再去devcpp里试。对于单个源文件，让devcpp直接打开作业文件夹里的某个cpp就好了</li>
+<li>Visual Studio里出现这样的警告，属于智能警告，对作业没有影响</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// （来自 IntelliSence 的警告）返回值被忽略:“scanf”。 </span></span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>作业提交网站<a target="_blank" rel="noopener" href="http://192.168.174.220:2080/">http://192.168.174.220:2080/</a>，最好使用chrome，这个平台有反作弊系统，还会误报，推荐做法是最大化浏览器窗口，并且不要尝试f12（？）</li>
+<li>课程不直接使用课本，不建议购买教辅与其他资料</li>
+<li>每节课的课件会在上课前发布</li>
+</ul>
+<h3 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h3><blockquote>
+<p>“应用程序控制策略已阻止此文件。恶意二进制信誉。”</p>
+</blockquote>
+<p>程序被 Windows Defender 的实时防护误杀了。  </p>
+<blockquote>
+<p>LINK1168: 无法打开 xx.exe 进行写入</p>
+</blockquote>
+<ol>
+<li>上一次运行程序，进程没有结束</li>
+<li>程序被杀毒软件误杀了，关闭杀毒软件</li>
+</ol>
+<ul>
+<li>网站提供了一些学习资源：<a target="_blank" rel="noopener" href="https://tongji-high-level-language-programming.github.io/Website/reading/">点击前往</a></li>
+<li>课程文件资源：<a target="_blank" rel="noopener" href="https://tongji-high-level-language-programming.github.io/Website/resources/">点击前往</a></li>
+<li>运算符优先级表：<a target="_blank" rel="noopener" href="https://tongji-high-level-language-programming.github.io/Website/tables/">点击前往</a></li>
+</ul>
+<h3 id="网站的附件内容"><a href="#网站的附件内容" class="headerlink" title="网站的附件内容"></a>网站的附件内容</h3><h4 id="“第一周作业”补充学习视频"><a href="#“第一周作业”补充学习视频" class="headerlink" title="“第一周作业”补充学习视频"></a>“第一周作业”补充学习视频</h4><p>25分16秒，介绍了怎么在常用办公软件画一些自定义图形，来表示短除法等等，然后介绍如何在电脑截屏，观看价值不大</p>
+<h4 id="“第二周作业”"><a href="#“第二周作业”" class="headerlink" title="“第二周作业”"></a>“第二周作业”</h4><h5 id="符号常量与常变量的差异"><a href="#符号常量与常变量的差异" class="headerlink" title="符号常量与常变量的差异"></a>符号常量与常变量的差异</h5><p>11分13秒，介绍了<code>#define</code>和<code>const [type] name;</code>的区别<br>表达的其实就一个，符号常量是字符串的替换，直接改了代码，而常变量会被编辑器看作一个真正的变量。推荐使用常变量。</p>
+<h5 id="字符与字符串的输出"><a href="#字符与字符串的输出" class="headerlink" title="字符与字符串的输出"></a>字符与字符串的输出</h5><p>12分33秒</p>
+<ol>
+<li><p>要求把Windows终端改成Windows控制台主机。设置在终端设置中：</p>
+<blockquote>
+<p>默认终端应用程序:当命令行应用程序在没有现有会话(例如从“开始菜单”或”运行”对话框)运行时启动的终端应用程序。</p>
+</blockquote>
+<p>切换过去以后，也能切换回来，右键窗口的标题栏，在属性里设置即可。</p>
+</li>
+<li><p>有效的输出包含：</p>
+<ul>
+<li>ASCII图形字符（33-126）</li>
+<li>汉字</li>
+</ul>
+</li>
+<li><p>不要让程序输出退格’\x8’，会导致你看到的和实际存储的不一样，其他的控制字符也是，不要有，如果可能出现但不确定，可以使用<code>strlen()</code>、<code>sizeof()</code>确定。</p>
+</li>
+</ol>
+<h5 id="IEEE754"><a href="#IEEE754" class="headerlink" title="IEEE754"></a>IEEE754</h5><p>还没看，学了再看吧</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/PhyCmdBlock">PhyCmdBlock</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://phycmdblock.github.io/2026/02/20/%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/">http://phycmdblock.github.io/2026/02/20/%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://phycmdblock.github.io" target="_blank">PhyCmdBlock的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C/">C++</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="wechat,qq,weibo,x"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/02/19/%E6%96%87%E4%BB%B6%E6%88%96U%E7%9B%98%E8%A2%AB%E8%BF%9B%E7%A8%8B%E5%8D%A0%E7%94%A8/" title="文件或U盘被进程占用"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">文件或U盘被进程占用</div></div><div class="info-2"><div class="info-item-1">提示  本文内容基于Windows系统   对于删除文件时发现被占用，你可以：  打开资源监视器 到cpu那一栏，然后在“关联的句柄”里去找要删除的文件，确认是哪个程序在用，如果没事情，就可以结束进程，再删除文件  弹出移动存储介质（如U盘）说设备正在使用中，也一样，直接在关联的句柄里搜盘符。  程序需要访问系统管理的资源的时候，需要从系统那里拿到一个“句柄”，作为操作时使用的索引，系统会记录下所有的这些信息，并认为持有句柄的程序正在使用对应资源，所以你能在资源监视器里找到正持有关联这个文件的句柄的程序。 </div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">PhyCmdBlock</div><div class="author-info-description">邦邦卡邦！</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/PhyCmdBlock"><i class="fab fa-github"></i><span>Github主页</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/PhyCmdBlock" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:w.zheny@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">所有人都要喜欢爱丽丝</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E4%BF%A1%E6%81%AF"><span class="toc-number">1.</span> <span class="toc-text">背景信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%A0%A1%E6%8F%90%E4%BE%9B%E7%9A%84%E7%BD%91%E7%AB%99"><span class="toc-number">2.</span> <span class="toc-text">一个学校提供的网站</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E6%A6%82%E5%86%B5"><span class="toc-number">2.1.</span> <span class="toc-text">网站概况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9"><span class="toc-number">2.2.</span> <span class="toc-text">网站内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.2.1.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%82%E9%A1%B9"><span class="toc-number">2.2.2.</span> <span class="toc-text">杂项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E7%9A%84%E9%99%84%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">2.2.3.</span> <span class="toc-text">网站的附件内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%9C%E7%AC%AC%E4%B8%80%E5%91%A8%E4%BD%9C%E4%B8%9A%E2%80%9D%E8%A1%A5%E5%85%85%E5%AD%A6%E4%B9%A0%E8%A7%86%E9%A2%91"><span class="toc-number">2.2.3.1.</span> <span class="toc-text">“第一周作业”补充学习视频</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%9C%E7%AC%AC%E4%BA%8C%E5%91%A8%E4%BD%9C%E4%B8%9A%E2%80%9D"><span class="toc-number">2.2.3.2.</span> <span class="toc-text">“第二周作业”</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E5%B8%B8%E9%87%8F%E4%B8%8E%E5%B8%B8%E5%8F%98%E9%87%8F%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="toc-number">2.2.3.2.1.</span> <span class="toc-text">符号常量与常变量的差异</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BE%93%E5%87%BA"><span class="toc-number">2.2.3.2.2.</span> <span class="toc-text">字符与字符串的输出</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#IEEE754"><span class="toc-number">2.2.3.2.3.</span> <span class="toc-text">IEEE754</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/02/20/%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" title="准备工作">准备工作</a><time datetime="2026-02-20T15:43:37.000Z" title="发表于 2026-02-20 23:43:37">2026-02-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/02/19/%E6%96%87%E4%BB%B6%E6%88%96U%E7%9B%98%E8%A2%AB%E8%BF%9B%E7%A8%8B%E5%8D%A0%E7%94%A8/" title="文件或U盘被进程占用">文件或U盘被进程占用</a><time datetime="2026-02-19T06:13:58.000Z" title="发表于 2026-02-19 14:13:58">2026-02-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/02/12/%E5%A6%82%E4%BD%95%E9%98%BB%E6%AD%A2WPS%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8/" title="如何阻止WPS自动启动">如何阻止WPS自动启动</a><time datetime="2026-02-12T11:17:40.000Z" title="发表于 2026-02-12 19:17:40">2026-02-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/02/11/VMware%20Workstation%E5%AE%89%E8%A3%85/" title="VMware Workstation安装">VMware Workstation安装</a><time datetime="2026-02-11T08:56:20.000Z" title="发表于 2026-02-11 16:56:20">2026-02-11</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By PhyCmdBlock</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="爱丽丝帮你找找看~" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div></body></html>
