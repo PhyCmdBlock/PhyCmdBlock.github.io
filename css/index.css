@@ -1655,8 +1655,8 @@ canvas:not(#ribbon-canvas),
   --global-font-size: 14px;
   --global-bg: #fff;
   --font-color: #4c4948;
-  --hr-border: #a4d8fa;
-  --hr-before-color: #80c8f8;
+  --hr-border: #d2ebfd;
+  --hr-before-color: #bfe4fb;
   --search-bg: #f6f8fa;
   --search-input-color: #4c4948;
   --search-a-color: #4c4948;
@@ -2057,7 +2057,7 @@ figure.highlight pre .javascript .function {
 .container code {
   padding: 2px 5px;
   background: rgba(27,31,35,0.05);
-  color: #f47466;
+  color: #a0f;
 }
 .container pre {
   padding: 10px 20px;
@@ -5446,7 +5446,7 @@ figure.highlight pre .javascript .function {
   overflow-wrap: break-word;
 }
 .container a {
-  color: #49b1f5;
+  color: #0064ff;
 }
 .container a:hover {
   text-decoration: underline;
