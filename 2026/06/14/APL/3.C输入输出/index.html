@@ -1,0 +1,475 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>3.C输入输出 | PhyCmdBlock的博客</title><meta name="author" content="PhyCmdBlock,w.zheny@qq.com"><meta name="copyright" content="PhyCmdBlock"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="3.C输入输出  printf&#x2F;scanf格式字符 考试会给不用记 printf所用的格式字符的种类    格式字符 说明     d, i 带符号的十进制形式整数(正数不带+)   o 八进制无符号形式输出整数(不带前导0)   x, X 十六进制无符号形式输出整数(不带前导0x)   u 十进制无符号形式输出整数   c 以字符形式输出(一个字符)   s 输出字符串   f 以小数形式输出浮">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3.C输入输出">
+<meta property="og:url" content="http://phycmdblock.github.io/2026/06/14/APL/3.C%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/index.html">
+<meta property="og:site_name" content="PhyCmdBlock的博客">
+<meta property="og:description" content="3.C输入输出  printf&#x2F;scanf格式字符 考试会给不用记 printf所用的格式字符的种类    格式字符 说明     d, i 带符号的十进制形式整数(正数不带+)   o 八进制无符号形式输出整数(不带前导0)   x, X 十六进制无符号形式输出整数(不带前导0x)   u 十进制无符号形式输出整数   c 以字符形式输出(一个字符)   s 输出字符串   f 以小数形式输出浮">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://phycmdblock.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2026-06-14T07:04:37.000Z">
+<meta property="article:modified_time" content="2026-06-15T08:01:37.502Z">
+<meta property="article:author" content="PhyCmdBlock">
+<meta property="article:tag" content="CPP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://phycmdblock.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "3.C输入输出",
+  "url": "http://phycmdblock.github.io/2026/06/14/APL/3.C%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/",
+  "image": "http://phycmdblock.github.io/img/avatar.jpg",
+  "datePublished": "2026-06-14T07:04:37.000Z",
+  "dateModified": "2026-06-15T08:01:37.502Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "PhyCmdBlock",
+      "url": "https://github.com/PhyCmdBlock"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.jpeg"><link rel="canonical" href="http://phycmdblock.github.io/2026/06/14/APL/3.C%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 19
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '3.C输入输出',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/admonition.css"><style>
+  @font-face {
+    font-family: "汉仪帅线体W";
+    src: url('/fonts/myfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+</style>
+<meta name="generator" content="Hexo 8.1.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" id="hexo-admonition-icon-injected">
+  </head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      if ($loadingBox.classList.contains('loaded')) return
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+
+  if (document.readyState === 'complete') {
+    preloader.endLoading()
+  } else {
+    window.addEventListener('load', preloader.endLoading)
+    document.addEventListener('DOMContentLoaded', preloader.endLoading)
+    // Add timeout protection: force end after 7 seconds
+    setTimeout(preloader.endLoading, 7000)
+  }
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E8%BD%AF%E4%BB%B6/"><i class="fa-fw fas fa-laptop-code"></i><span> 软件</span></a></li><li><a class="site-page child" href="/categories/%E7%B3%BB%E7%BB%9F/"><i class="fa-fw fas fa-desktop"></i><span> 系统</span></a></li><li><a class="site-page child" href="/categories/%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"><i class="fa-fw fas fa-code"></i><span> 高级语言程序设计</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-ellipsis-h"></i><span> 更多</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/about/index.html"><i class="fa-fw fas fa-circle-info"></i><span> 关于本站</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/top_image.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">PhyCmdBlock的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">3.C输入输出</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E8%BD%AF%E4%BB%B6/"><i class="fa-fw fas fa-laptop-code"></i><span> 软件</span></a></li><li><a class="site-page child" href="/categories/%E7%B3%BB%E7%BB%9F/"><i class="fa-fw fas fa-desktop"></i><span> 系统</span></a></li><li><a class="site-page child" href="/categories/%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"><i class="fa-fw fas fa-code"></i><span> 高级语言程序设计</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-ellipsis-h"></i><span> 更多</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/about/index.html"><i class="fa-fw fas fa-circle-info"></i><span> 关于本站</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">3.C输入输出</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-06-14T07:04:37.000Z" title="发表于 2026-06-14 15:04:37">2026-06-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-06-15T08:01:37.502Z" title="更新于 2026-06-15 16:01:37">2026-06-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%AB%98%E7%BA%A7%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">高级语言程序设计</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p><strong>3.C输入输出</strong></p>
+<hr>
+<h2 id="printf-scanf格式字符">printf/scanf格式字符</h2>
+<p>考试会给不用记</p>
+<h3 id="printf所用的格式字符的种类">printf所用的格式字符的种类</h3>
+<table>
+<thead>
+<tr>
+<th>格式字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>d, i</td>
+<td>带符号的十进制形式整数(正数不带+)</td>
+</tr>
+<tr>
+<td>o</td>
+<td>八进制无符号形式输出整数(不带前导0)</td>
+</tr>
+<tr>
+<td>x, X</td>
+<td>十六进制无符号形式输出整数(不带前导0x)</td>
+</tr>
+<tr>
+<td>u</td>
+<td>十进制无符号形式输出整数</td>
+</tr>
+<tr>
+<td>c</td>
+<td>以字符形式输出(一个字符)</td>
+</tr>
+<tr>
+<td>s</td>
+<td>输出字符串</td>
+</tr>
+<tr>
+<td>f</td>
+<td>以小数形式输出浮点数</td>
+</tr>
+<tr>
+<td>e, E</td>
+<td>以指数形式输出浮点数</td>
+</tr>
+<tr>
+<td>g, G</td>
+<td>从f，e中选择宽度较短的形式输出浮点数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="printf所用的附加格式字符的种类">printf所用的附加格式字符的种类</h3>
+<table>
+<thead>
+<tr>
+<th>附加格式字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字母l</td>
+<td>表示长整型整数，用于d, o, x, u前</td>
+</tr>
+<tr>
+<td>字母h</td>
+<td>表示短整型整数，用于d, o, x, u前</td>
+</tr>
+<tr>
+<td>正整数m</td>
+<td>表示输出数据的宽度</td>
+</tr>
+<tr>
+<td>正整数.n</td>
+<td>对浮点数，表示n位小数<br>对字符串，表示前n个字符</td>
+</tr>
+<tr>
+<td>-</td>
+<td>输出左对齐</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scanf所用的格式字符的种类">scanf所用的格式字符的种类</h3>
+<table>
+<thead>
+<tr>
+<th>格式字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>d, i</td>
+<td>输入带符号的十进制形式整数</td>
+</tr>
+<tr>
+<td>o</td>
+<td>输入八进制无符号形式整数(不带前导0)</td>
+</tr>
+<tr>
+<td>x, X</td>
+<td>输入十六进制无符号形式整数(不带前导0x)</td>
+</tr>
+<tr>
+<td>u</td>
+<td>输入十进制无符号形式整数</td>
+</tr>
+<tr>
+<td>c</td>
+<td>输入单个字符</td>
+</tr>
+<tr>
+<td>s</td>
+<td>输入字符串</td>
+</tr>
+<tr>
+<td>f</td>
+<td>输入小数/指数形式的浮点数</td>
+</tr>
+<tr>
+<td>e, E, g, G</td>
+<td>同f</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scanf所用的附加格式字符的种类">scanf所用的附加格式字符的种类</h3>
+<table>
+<thead>
+<tr>
+<th>附加格式字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字母l</td>
+<td>输入长整型数，用于d, o, x, u前<br>输入double型数，用于f, e, g前</td>
+</tr>
+<tr>
+<td>h</td>
+<td>输入短整型数，用于d, o, x, u前</td>
+</tr>
+<tr>
+<td>正整数n</td>
+<td>指定输入数据所占的宽度</td>
+</tr>
+<tr>
+<td>*</td>
+<td>本输入项不赋给相应的变量</td>
+</tr>
+</tbody>
+</table>
+<h2 id="printf">printf</h2>
+<ul>
+<li><code>printf(&quot;%d&quot;, 'A')</code>是合理的行为，不需要进行强制数据转换</li>
+<li>转义符在格式控制表列里是会正常转义的。</li>
+<li>%d数量和输出表列的数量关系
+<ul>
+<li>如果%d(格式符的数量)小于后面输出表列的数量，则忽略输出表内多出来的量</li>
+<li>如果%d(格式符的数量)大于后面输出表列的数量，属于未定义行为，输出不确定的值，可能会用0代替没有提供的量来输出</li>
+</ul>
+</li>
+<li>printf的返回值的含义是：输出的字符个数</li>
+<li>附加控制符l的作用：按照长整型输出数据，%ld:long</li>
+<li>附加控制符h的作用：按照短整型输出数据,%hd:short</li>
+<li>如果要输出的数据类型与格式控制符的类型不一致，则以格式控制符为准</li>
+<li>%后面加一个整数：代表这个数据的输出宽度，正数右对齐，负数左对齐</li>
+<li>%f：将浮点数以十进制的小数形式输出，<strong>默认小数点后6位</strong></li>
+<li>%e：将浮点数以十进制的科学记数法（小写e）形式输出</li>
+<li>%E：将浮点数以十进制的科学记数法（大写E）形式输出，</li>
+<li>%e和%E的区别是指数标识符字母e的大小写</li>
+<li>%g/%G：输出形式为小数形式和科学记数法之间宽度较小的一种，默认使用6位有效数字并去除尾0</li>
+<li>%g/%G：输出形式的差别为用科学记数法输出时e的大小写</li>
+<li>对于double数据，输出时格式符%f和%lf没有区别</li>
+<li>%后加.+整数：代表用%f和%e方式浮点数的小数点后位数（即使是用e方式输出，也是小数点后位数，不是有效位数），%g方式下的小数点后位数（小数形式）和有效位数（科学记数法），%s方式下代表输出字符串的前多少个字符</li>
+<li>想要输出%本身，需要另一个%来转义：<code>%%</code></li>
+<li>printf输出字符数组的时候，如果最后没有尾零，为一直输出越界</li>
+</ul>
+<h2 id="scanf">scanf</h2>
+<ul>
+<li><code>scanf()</code>函数返回值为正确输入的变量的数量</li>
+<li><code>scanf()</code>终止条件4个（<code>%c</code>不是这样）：
+<ol>
+<li>回车</li>
+<li>空格</li>
+<li>非法字符</li>
+<li>达到指定宽度</li>
+</ol>
+</li>
+<li>多个输入时，格式控制符间是否有空格不影响正确性</li>
+<li>当格式控制表列中有除空格以外的其它字符（逗号，a=等）时，对这些字符的输入方法是要求输入的时候也要包含相同的字符，以相同的方式输入。如果没有按照要求输入，则会输入失败，从和格式控制表列开始不一样的地方以后的东西都留在输入流中待下次读取。</li>
+<li><code>%md</code>中的m表示：读取m个宽度来作为输入值,到达设定的总宽度的结束条件优先级低于前面3个(回车空格非法)</li>
+<li>结论：<code>%*md</code>的<code>*m</code>表示：读取m个宽度并不作为任何输入，直接忽略</li>
+<li><code>scanf</code>中， 输入浮点型数据时，<code>%f</code>（float） 和 <code>%lf</code>(double) 有差别，上面printf里没区别</li>
+<li><code>%mf</code>/<code>%mlf</code>如果指定了宽度m，则只读取宽度m来作为输入数据</li>
+<li><code>%m.nf</code>/<code>%m.nlf</code>如果指定了精度（小数点后的位数），属于未定义行为，发生异常，数据不可信</li>
+</ul>
+<div id ="char3"></div>
+<ul>
+<li><code>%c</code>只读1个字符</li>
+<li>空格、换行（ascii为10）是<code>scanf</code>中<code>%c</code>方式的有效输入，但必须注意格式控制表列中有空格，那么这个空格将不会被读入</li>
+</ul>
+<p><div id ="string4"></div></p>
+<ul>
+<li><code>scanf(&quot;%s&quot;,数组名)</code>，按照字符串输入，不能读有空格的字符串，输入多个的时候，空格是分隔符，数组最后有尾0,没有换行符。超出长度会越界报错</li>
+</ul>
+<h2 id="putchar-getchar-getche-getch"><code>putchar()</code>/<code>getchar()</code>/<code>_getche()</code>/<code>_getch()</code></h2>
+<ul>
+<li><code>putchar()</code>往屏幕上输出单个字符。</li>
+</ul>
+<div id ="char4"></div>
+<ul>
+<li><code>getchar()</code>输入单个字符，可以输入空格、回车、但还是不能处理转义符。</li>
+</ul>
+<div id ="char5"></div>
+<div id ="char6"></div>
+<ul>
+<li><code>getchar()</code>有回显（可以看到自己输入了什么），会等待回车键。<code>_getche()</code>有回显（e是echo的意思），但不等回车键立刻读取。<code>_getch()</code>没有回显，不等回车键直接读取。gcc里面这个下划线可以不要</li>
+<li><code>getchar()</code>和<code>putchar()</code>返回值是这个字符ascii码的int。</li>
+<li>使用<code>putchar()</code>和<code>getchar()</code>有时需要加cstdio或者stdio.h头文件。目前的msvc和gcc都不需要。</li>
+<li><code>getchar()</code>和<code>putchar()</code>不返回char，而是int。为什么呢？因为除了要表示256个ASCII字符，还要表示出错的值，超出一个字节能表示的范围。为什么不用short用int？因为就类似于之前看到的，用float进行计算反而比double慢，用short也是比int慢，所以就直接上升到int类型。</li>
+<li>使用<code>_getche()</code>和<code>_getch()</code>需要<code>conio.h</code></li>
+<li><code>_getch()</code>获取键值的时候，部分特殊键(上下左右箭头，insert delete等)都是回传2个值，且第一个是224（char的-32）.</li>
+<li>enter按下后，
+<ul>
+<li><code>getchar()</code>获取的是换行’\n’(10)</li>
+<li><code>_getch()</code>/<code>_getche()</code>获取的是回车’\r’(13)</li>
+</ul>
+</li>
+</ul>
+<div id ="string5"></div>
+<h2 id="gets"><code>gets()</code></h2>
+<p>vs：<code>gets_s(s)</code><br>
+gcc:<code>gets(s)</code><br>
+可以获取带空格字符串，超出长度会越界报错<br>
+不会把’\n’输进来</p>
+<div id ="string6"></div>
+<h2 id="fgets"><code>fgets()</code></h2>
+<p>都可以使用<code>fgets(a,数字,stdin)</code>来输入带空格字符串，超出长度会越界报错<br>
+数字代表包含加上尾0最多搞多少字符<br>
+会把’\n’输进来</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/PhyCmdBlock">PhyCmdBlock</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://phycmdblock.github.io/2026/06/14/APL/3.C%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/">http://phycmdblock.github.io/2026/06/14/APL/3.C%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://phycmdblock.github.io" target="_blank">PhyCmdBlock的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CPP/">CPP</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="wechat,qq,weibo,x"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/06/14/APL/4.%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6/" title="4.表达式、运算符"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">4.表达式、运算符</div></div><div class="info-2"><div class="info-item-1">4.表达式、运算符   C/C++中任意表达式都有值 表达式类型：意思就是最后一步运算是什么类型。b=(a=3*6,a/2):赋值表达式 一个级别的运算符只可能是同一个结合性。  运算符优先级 （经过筛选，留下高程涉及到的） 完整版    运算符 结合性 含义 例子     优先级第 1 组      ::  作用域解析运算符 Time::Time()std::cout   优先级第 2 组（表达式）      () L-R 函数调用 fun(1)   ()  值构造，即 type(expr) Time(12,0,0)   []  数组下标 str[1]   -&gt;  间接成员运算符 p-&gt;year   .  直接成员运算符 day1.year   static_cast  专用的类型转换 static_cast&lt;int&gt;(2.3)   ++  加 1 运算符，后缀 a++   --  减 1 运算符，后缀 a--   优先级第 3 组（全是一元运算符）      ! R-L 逻辑非 !true   +  一元加号（正号） +2   -  一元减号（负号） ...</div></div></div></a><a class="pagination-related" href="/2026/06/14/APL/2.C++%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" title="2.C++输入输出"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">2.C++输入输出</div></div><div class="info-2"><div class="info-item-1">2.C++输入输出  基本  cin、cout、&lt;&lt;、&gt;&gt;  cin、cout都是对象。 &lt;&lt;、&gt;&gt;此处是流插入、提取运算符，原来是位操作运算符，7级优先级，经过重载变成现在的功能。重载运算符现在不学。 cout &lt;&lt; a;实际上是表达式语句。可以使用对表达式分析的方式进行解释。 &lt;&lt;在cout对象和a变量之间进行运算。运算的值是cout对象本身。 cout &lt;&lt; a,b,c;实际上是一个逗号表达式，表达式的值是c，最终只会输出a的值。   缓冲区  cout被插入数据后，存储在缓冲区内，当满足条件（缓冲区满/endl/‘\n’/使用cout.flush();刷新）才会集中输出一次。Windows系统下对这个规则的遵守不如Linux规范。 cin不会被直接提取数据，输入的数据会存储在缓冲区内，当满足条件（缓冲区满/‘\n’）才会集中被提取一轮数据。   输入输出设备均可以更改，称为输入/输出重定向。 输出会自动判断数据类型，选择合适的方法输出。char类型会自动按照字符输出。如果想要按数字或者按字...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/06/14/APL/2.C++%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" title="2.C++输入输出"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-06-14</div><div class="info-item-2">2.C++输入输出</div></div><div class="info-2"><div class="info-item-1">2.C++输入输出  基本  cin、cout、&lt;&lt;、&gt;&gt;  cin、cout都是对象。 &lt;&lt;、&gt;&gt;此处是流插入、提取运算符，原来是位操作运算符，7级优先级，经过重载变成现在的功能。重载运算符现在不学。 cout &lt;&lt; a;实际上是表达式语句。可以使用对表达式分析的方式进行解释。 &lt;&lt;在cout对象和a变量之间进行运算。运算的值是cout对象本身。 cout &lt;&lt; a,b,c;实际上是一个逗号表达式，表达式的值是c，最终只会输出a的值。   缓冲区  cout被插入数据后，存储在缓冲区内，当满足条件（缓冲区满/endl/‘\n’/使用cout.flush();刷新）才会集中输出一次。Windows系统下对这个规则的遵守不如Linux规范。 cin不会被直接提取数据，输入的数据会存储在缓冲区内，当满足条件（缓冲区满/‘\n’）才会集中被提取一轮数据。   输入输出设备均可以更改，称为输入/输出重定向。 输出会自动判断数据类型，选择合适的方法输出。char类型会自动按照字符输出。如果想要按数字或者按字...</div></div></div></a><a class="pagination-related" href="/2026/05/27/APL/apl-w13l2/" title="apl-w13l2"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-27</div><div class="info-item-2">apl-w13l2</div></div><div class="info-2"><div class="info-item-1">week13 lesson2 实验课  引用 概念，声明  引用只有C++有。 引用就是给变量取一个别名。 引用是一种声明，不是一种定义。 引用需要在声明时初始化。 引用不分配单独的空间。 引用声明以后，在整个生存期内都不能更改指向的变量。  12int a;int &amp;b = a;  混淆辨析  123int a[3];//a是一个数组int &amp;b[3];//错误int (&amp;b)[3] = a;//正确 这里，int &amp;b[3];指的是创建了一个数组，里面全是引用，而这是不行的。 int (&amp;b)[3]指的是这个引用指向整个数组。 123int *a;//a是一个指针int &amp;*b;//错误int *&amp;b = a;//正确 int &amp;*b;指的是创建了一个指针，这个指针指向了一个引用，而这是不行的。 int *&amp;b指的是这个引用指向一个指针。  &amp;符号：在“定义新的变量”之前（出现在一个全新的名字之前），则代表这里不是定义变量，是在声明引用；如果出现在除此以外的地方，代表取地址符。  用处  不是用来...</div></div></div></a><a class="pagination-related" href="/2026/04/28/APL/apl-w9l1/" title="apl-w9l1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-04-28</div><div class="info-item-2">apl-w9l1</div></div><div class="info-2"><div class="info-item-1">week8 lecture1  一维数组 一维数组初始化 123456int a[10] = &#123;1,2,3,4,5,6,7,8,9,10&#125;;int a[10] = &#123;1,2,3,4,5,6,7,8,9,10,11&#125;;//报错int b[] = &#123;1,2,3,4,5,6,7,8,9,10&#125;;//数组长度缺省？数组长度自动为10，因为后面有10个数字int c[10] = &#123;1,2,3&#125;;//下标3~9的全部自动为0.int d[1000] = &#123;0&#125;;//全部都是0了！但是理解方式应该为：将d[0]初始化为0,其他的元素自动为0int e[1000] = &#123;1&#125;;//将e[0]初始化为1,其他的元素自动为0。不是全1！  需要说明的是：只要你有对数组进行初始化的这个动作，那么所有你没初始化到的元素全部都会初始化为0.所以你甚至可以这样，全部初始化为0  1int a[10] = &#123;&#125;;  和之前的变量一样的，如果是静态局部，或者全局，都会自己初...</div></div></div></a><a class="pagination-related" href="/2026/06/14/APL/5.%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/" title="5.控制语句"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-06-14</div><div class="info-item-2">5.控制语句</div></div><div class="info-2"><div class="info-item-1">5.控制语句   goto语句，直接无条件跳转到其他位置，位置用语句标号来标识，命名和变量名规则一样。本课程禁止使用。  if  if后面跟的大括号里面这个是语句序列，语句序列只有1个语句可以把大括号省略。 if-else一整个当作一个语句来看 多支语句，中间写的是else if()…… 用多支语句来判断区间，第一个支是a&gt;=90，第二个支写成a&gt;=80 &amp;&amp; a&lt;90是最好的，即使a是整型，a&lt;=89也没那么好，因为如果你要改成浮点数，那a&lt;90的写法是不用改的。 语句序列只有一个语句可以省略大括号的原则，可以应用于else后面直接跟if的情况。 if语句的大括号可以用栈来配对。  switch  switch只能用来匹配整形。case后是整形。这是因为浮点数有误差，没法匹配。 switch语句的执行逻辑：算出括号内表达式的值，然后去下面的case里一一对应。一旦他找到一个case匹配上了，那么在此处进入程序，一句句顺序执行，所以后面的case对他而言就是不存在。如果想要达成一个数一种操作，就要在每一个case的最后加一句break...</div></div></div></a><a class="pagination-related" href="/2026/05/25/APL/apl-w11l2+w12l1+w12l2+w13l1/" title="apl-w11l2+w12l1+w12l2+w13l1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-05-25</div><div class="info-item-2">apl-w11l2+w12l1+w12l2+w13l1</div></div><div class="info-2"><div class="info-item-1"> week 11 lecture 2   _getch()获取键值的时候，部分特殊键(上下左右箭头，insert delete等)都是回传2个值，且第一个是224（char的-32）. enter按下后， getchar()获取的是换行’\n’(10) _getch()获取的是回车’\r’(13)   week 12 lecture 1  一维数组和指针  数组名就是数组第一个元素的地址。本质上a可以当作&amp;a[0]一样使用。但是要注意a依旧是一个数组，不是一个指针，只是运用的时候“退化”为指针。sizeof(a)依然是数组所有元素的大小，&amp;a、&amp;a[0]、a的值是一样的，都是数组首地址。 下标法和指针法的等效：a[i]和*(a+i)是等效的，可以互用，且后者是前者的本质。而且这里的a也不一定要是数组名，只要是指针就行。也可以解释为什么6[a]的写法是正确且和a[6]相同的原因。 理论上遍历数组的话，下标遍历再去a[i]不如直接指针++效率高。 理论上这种方式可以将数组作为基准，前后访问到内存里的每一处。而C/C++不做越界检查，需要自己保证没有问题。 指针...</div></div></div></a><a class="pagination-related" href="/2026/06/10/APL/apl-w15l2/" title="apl-w15l2"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-06-10</div><div class="info-item-2">apl-w15l2</div></div><div class="info-2"><div class="info-item-1">week15 lecture2  构造函数 结构体方式对象初始化 如果全部的数据成员都是公有的（只要有人是私有就不行），那可以用结构体一样的方式进行初始化。 123456Time a = &#123;1,2,3&#125;;Time a&#123;1,2,3&#125;;Time a(1,2,3);//C++20开始//上面都是可以的Time a = (1,2,3)//这句不对的，后面是逗号表达式，相当于Time a = 3; 声明时统一初始化 C++11后可以 12345class Time&#123;  public:	int h = 12;	int m = 0;&#125;; 构造函数初始化 1234567class Time&#123;  private:	int h;	int m;  public:	Time(int hi,int mi);&#125;;  构造函数没有类型，没有void，也不是缺省int。特殊语法。 构造函数可以带参数。 构造函数必须放在公有这里 你不自己去写，默认会有一个构造函数在那里的，只是内容是空的，叫无参空体。如果你写了，默认这个构造函数就没了...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">PhyCmdBlock</div><div class="author-info-description">邦邦卡邦！</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/PhyCmdBlock"><i class="fab fa-github"></i><span>Github主页</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/PhyCmdBlock" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:w.zheny@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">所有人都要喜欢爱丽丝</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#printf-scanf%E6%A0%BC%E5%BC%8F%E5%AD%97%E7%AC%A6"><span class="toc-number">1.</span> <span class="toc-text">printf&#x2F;scanf格式字符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#printf%E6%89%80%E7%94%A8%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%AD%97%E7%AC%A6%E7%9A%84%E7%A7%8D%E7%B1%BB"><span class="toc-number">1.1.</span> <span class="toc-text">printf所用的格式字符的种类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#printf%E6%89%80%E7%94%A8%E7%9A%84%E9%99%84%E5%8A%A0%E6%A0%BC%E5%BC%8F%E5%AD%97%E7%AC%A6%E7%9A%84%E7%A7%8D%E7%B1%BB"><span class="toc-number">1.2.</span> <span class="toc-text">printf所用的附加格式字符的种类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scanf%E6%89%80%E7%94%A8%E7%9A%84%E6%A0%BC%E5%BC%8F%E5%AD%97%E7%AC%A6%E7%9A%84%E7%A7%8D%E7%B1%BB"><span class="toc-number">1.3.</span> <span class="toc-text">scanf所用的格式字符的种类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scanf%E6%89%80%E7%94%A8%E7%9A%84%E9%99%84%E5%8A%A0%E6%A0%BC%E5%BC%8F%E5%AD%97%E7%AC%A6%E7%9A%84%E7%A7%8D%E7%B1%BB"><span class="toc-number">1.4.</span> <span class="toc-text">scanf所用的附加格式字符的种类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#printf"><span class="toc-number">2.</span> <span class="toc-text">printf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scanf"><span class="toc-number">3.</span> <span class="toc-text">scanf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#putchar-getchar-getche-getch"><span class="toc-number">4.</span> <span class="toc-text">putchar()&#x2F;getchar()&#x2F;_getche()&#x2F;_getch()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gets"><span class="toc-number">5.</span> <span class="toc-text">gets()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fgets"><span class="toc-number">6.</span> <span class="toc-text">fgets()</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/15/APL/%E5%85%B6%E4%BB%96/" title="其他">其他</a><time datetime="2026-06-15T06:11:31.000Z" title="发表于 2026-06-15 14:11:31">2026-06-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/14/APL/9.%E7%BB%93%E6%9E%84%E4%BD%93%E3%80%81%E7%B1%BB%E3%80%81%E5%AF%B9%E8%B1%A1/" title="9.结构体、类、对象">9.结构体、类、对象</a><time datetime="2026-06-14T07:42:08.000Z" title="发表于 2026-06-14 15:42:08">2026-06-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/14/APL/8.%E6%8C%87%E9%92%88/" title="8.指针">8.指针</a><time datetime="2026-06-14T07:40:04.000Z" title="发表于 2026-06-14 15:40:04">2026-06-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/14/APL/7.%E6%95%B0%E7%BB%84/" title="7.数组">7.数组</a><time datetime="2026-06-14T07:38:35.000Z" title="发表于 2026-06-14 15:38:35">2026-06-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/14/APL/6.%E5%87%BD%E6%95%B0/" title="6.函数">6.函数</a><time datetime="2026-06-14T07:33:43.000Z" title="发表于 2026-06-14 15:33:43">2026-06-14</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By PhyCmdBlock</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css')
+    if (true) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="爱丽丝帮你找找看~" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div></body></html>
